@@ -1,0 +1,112 @@
+# This is just a simple interview to dispel some of the fear of code and get an easy win.
+#
+# Takeaways:
+# - Force a question to display with `mandatory: True`
+# - This is going to be easy!
+---
+metadata:
+  title: Authorization Agreement for Voluntary Adult Caregiver
+  short title: Texas Voluntary Adult Caregiver
+---
+### Interview Order ###
+mandatory: True
+code: |
+  full_name_of_submitter
+  full_name_of_other_parent
+  full_name_of_child
+  full_name_of_voluntary_adult
+  voluntary_adult_relationship
+  is_child_not_subject_of_valid_auth
+  is_child_involved_with_court
+  possible_expire_date
+  possbile_circumstances_to_expire
+  parent_signature
+  other_parent_signature
+  voluntary_adult_signature
+  fm34109
+---
+question: |
+  Please fill out your Child's Full Name and Date of Birth.
+fields:
+  - Full Name: full_name_of_child
+  - Date of Birth: child_date_of_birth
+    datatype: date
+---
+question: |
+  Please fill out your Full Name, Physical Address, Telephone Number, and any other contact information.
+fields:
+  - Full Name: full_name_of_submitter
+  - Physical Address: submitter_address
+  - Telephone Number: submitter_telephone
+  - Other contact information: submitter_other_contact_info
+---
+question: |
+  Please fill out the other parent's Full Name, Physical Address, Telephone Number, and any other contact information.
+fields:
+  - Full Name: full_name_of_other_parent
+  - Physical Address: other_parent_address
+  - Telephone Number: other_parent_telephone
+  - Other contact information: other_parent_other_contact_info
+---
+question: |
+  Please fill out the Voluntary Adult's Full Name, Physical Address, Telephone Number, and any other contact information.
+fields:
+  - Full Name: full_name_of_voluntary_adult
+  - Physical Address: voluntary_adult_address
+  - Telephone Number: voluntary_adult_telephone
+  - Other contact information: voluntary_adult_other_contact_info
+---
+question: |
+  Please select one of the following in relationship to the child.
+fields:
+  input type: radio
+  choices:
+    - Adult Caregiver
+    - Parental Child Safety Placement Voluntary Caregiver in accordance with Child Protective Services if
+    requirements of Texas Family Code, Subchapter L are met
+---
+question: |
+  To the best of your knowledge, this child is not the subject of a current (pre-existing) valid authorization agreement, and no
+  parent, guardian, custodian, licensed child-placing agency or other agency makes any claim to
+  actual physical possession or care, custody or control of the child that is inconsistent with this
+  authorization agreement.
+yesno: is_child_not_subject_of_valid_auth
+---
+question: |
+  To the best of your knowledge, please select one of the below.
+fields:
+  input type: radio
+  choices:
+    - There is **no** court involvement with this child.
+    - There **has been** the subject of a court action.
+---
+question: |
+  If the parent wishes the agreement to expire a date earlier then six months please indicate the date and any circumstances that might be agreed upon to terminate this agreement.
+fields:
+    - Prior date: possible_expire_date
+      datatype: date
+    - Optional Circumstances: possbile_circumstances_to_expire
+---
+question: |
+  Please sign here as the parent.
+signature: parent_signature
+---
+question: |
+  Please sign here as the other parent (if they are with you).
+signature: other_parent_signature
+---
+question: |
+  Please sign here as the voluntary adult caregiver.
+signature: voluntary_adult_signature
+---
+question: Thank you for completing the Texas Voluntary Adult Caregiver form FM-34-109
+subquestion: |
+  You'll need to print this out, and have a Notary Public in and for the State of Texas stamp this.
+mandatory: True
+attachments:
+  - name: FM-34-109
+    filename: fm-34-109
+    variable name: fm34109
+    pdf template file: fm-34-109.pdf
+    valid formats:
+      - pdf
