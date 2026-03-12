@@ -45,7 +45,7 @@ fields:
     required: False
 ---
 question: |
-  Please fill out the Voluntary Adult's Full Name, Physical Address, Telephone Number, and any other contact information.
+  Please fill out the **Voluntary** Adult's Full Name, Physical Address, Telephone Number, and any other contact information.
 fields:
   - Full Name: Name
   - Physical Address: PhysicalAddress3
@@ -63,7 +63,9 @@ fields:
       - Parental Child Safety Voluntary Caregiver: ParentalChildSaftetyPlacementCaregiver
 ---
 question: |
-  To the best of your knowledge, this child is not the subject of a current (pre-existing) valid authorization agreement, and no
+  To the best of your knowledge:
+subquestion: |
+  This child is not the subject of a current (pre-existing) valid authorization agreement, and no
   parent, guardian, custodian, licensed child-placing agency or other agency makes any claim to
   actual physical possession or care, custody or control of the child that is inconsistent with this
   authorization agreement.
