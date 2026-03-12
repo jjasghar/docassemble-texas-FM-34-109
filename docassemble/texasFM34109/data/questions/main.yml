@@ -9,7 +9,7 @@ code: |
   FullName1
   FullName2
   ChildsFullName
-  Name
+  FullName3
   Caregiver
   ThisChildIsNotTheSubjectOfACurrentPreExistingValidAuthorizationAgreementAndNo
   CourtInvolvement
@@ -47,25 +47,27 @@ fields:
 question: |
   Please fill out the **Voluntary** Adult's Full Name, Physical Address, Telephone Number, and any other contact information.
 fields:
-  - Full Name: Name
+  - Full Name: FullName3
   - Physical Address: PhysicalAddress3
   - Telephone Number: TelephoneNumber3
   - Other contact information: OtherContactInformation3
     required: False
 ---
 question: |
-  Please select one of the following in relationship to the child.
+  Please select one of the following for the **Voluntary Adult's** relationship to the child.
+subquestion: |
+  Parentarel Safety Placement Voluntary Caregiver in accordance with Child Protective Services if requirements of Texas Family Code, Subchapter L are met
 fields:
   - no label: Caregiver
     input type: radio
     choices:
-      - Adult Caregiver: AdultCaregiver
-      - Parental Child Safety Voluntary Caregiver: ParentalChildSaftetyPlacementCaregiver
+      - Adult Caregiver
+      - Parental Child Safety Voluntary Caregiver
 ---
 question: |
   To the best of your knowledge:
 subquestion: |
-  This child is not the subject of a current (pre-existing) valid authorization agreement, and no
+  This child is **not** the subject of a current (pre-existing) valid authorization agreement, and no
   parent, guardian, custodian, licensed child-placing agency or other agency makes any claim to
   actual physical possession or care, custody or control of the child that is inconsistent with this
   authorization agreement.
@@ -77,8 +79,8 @@ fields:
   - no label: CourtInvolvement
     input type: radio
     choices:
-      - There is **no** court involvement with this child.: ThereIsNoCourtInvolvement
-      - There **has been** the subject of a court action.: ThereIsHasBeenCourtInvolvement
+      - There is **no** court involvement with this child.: no_involvement
+      - There **has been** the subject of a court action.: has_been
 ---
 question: |
   If the parent wishes the agreement to expire a date earlier then six months please indicate the date and any circumstances that might be agreed upon to terminate this agreement.
@@ -87,6 +89,7 @@ fields:
       datatype: date
       required: False
     - Optional Circumstances: IfApplicableStateCircumstancesToTerminateTheAgreementBeforeTheExpirationDate
+      datatype: area
       required: False
 ---
 question: |
@@ -104,13 +107,9 @@ question: |
 signature: VolunutaryCaregiver_Signature
 required: False
 ---
-code: |
-    PrintedName1 = FullName1
-    PrintedName2 = FullName2
----
 question: Thank you for completing the Texas Voluntary Adult Caregiver form FM-34-109
 subquestion: |
-  You'll need to print this out, and have a Notary Public in and for the State of Texas stamp this.
+  You'll need to print this out, and have a State of Texas Notary Public sigin and validate this.
 mandatory: True
 attachments:
   - name: FM-34-109
@@ -119,4 +118,33 @@ attachments:
     pdf template file: editable-fm-34-109.pdf
     valid formats:
       - pdf
+    fields:
+      ChildsFullName: ${ ChildsFullName }
+      DateOfBirth: ${ DateOfBirth }
+      FullName1: ${ FullName1 }
+      PhysicalAddress1: ${ PhysicalAddress1 }
+      TelephoneNumber1: ${ TelephoneNumber1 }
+      OtherContactInformation1: ${ OtherContactInformation1 }
+      FullName2: ${ FullName2 }
+      PhysicalAddress2: ${ PhysicalAddress2 }
+      TelephoneNumber2: ${ TelephoneNumber2 }
+      OtherContactInformation2: ${ OtherContactInformation2 }
+      Name: ${ FullName3 }
+      PhysicalAddress3: ${ PhysicalAddress3 }
+      TelephoneNumber3: ${ TelephoneNumber3 }
+      OtherContactInformation3: ${ OtherContactInformation3 }
+      AdultCaregiver: ${ Caregiver[0] }
+      ParentalChildSaftetyPlacementCaregiver: ${ Caregiver[1] }
+      ThisChildIsNotTheSubjectOfACurrentPreExistingValidAuthorizationAgreementAndNo: ${ ThisChildIsNotTheSubjectOfACurrentPreExistingValidAuthorizationAgreementAndNo }
+      ThereIsNoCourtInvolvement: ${ CourtInvolvement[0] }
+      ThereIsHasBeenCourtInvolvement: ${ CourtInvolvement[1] }
+      EnterIntoTheAgreementIndicateTheDateTheAgreementIsToExpire: ${ EnterIntoTheAgreementIndicateTheDateTheAgreementIsToExpire }
+      IfApplicableStateCircumstancesToTerminateTheAgreementBeforeTheExpirationDate: ${ IfApplicableStateCircumstancesToTerminateTheAgreementBeforeTheExpirationDate }
+      DisclosuresIncludedInThisAuthorizationAgreement: ${ DisclosuresIncludedInThisAuthorizationAgreement }
+      PrintedName1: ${ FullName1 }
+      ParentSignature_2: ${ ParentSignature_2 }
+      PrintedName2: ${ FullName2 }
+      VolunutaryCaregiver_Signature: ${ VolunutaryCaregiver_Signature }
+      PrintedName3: ${ FullName3 }
+
 
