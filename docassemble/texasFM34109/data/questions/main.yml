@@ -11,7 +11,7 @@ code: |
   ChildsFullName
   FullName3
   Caregiver
-  ThisChildIsNotTheSubjectOfACurrentPreExistingValidAuthorizationAgreementAndNo
+  ThisChildIsNotTheSubjectOfACurrent
   CourtInvolvement
   EnterIntoTheAgreementIndicateTheDateTheAgreementIsToExpire
   DisclosuresIncludedInThisAuthorizationAgreement
@@ -71,7 +71,7 @@ subquestion: |
   parent, guardian, custodian, licensed child-placing agency or other agency makes any claim to
   actual physical possession or care, custody or control of the child that is inconsistent with this
   authorization agreement.
-yesno: ThisChildIsNotTheSubjectOfACurrentPreExistingValidAuthorizationAgreementAndNo
+yesno: ThisChildIsNotTheSubjectOfACurrent
 ---
 question: |
   To the best of your knowledge, please select one of the below.
@@ -134,10 +134,10 @@ attachments:
       TelephoneNumber3: ${ TelephoneNumber3 }
       OtherContactInformation3: ${ OtherContactInformation3 }
       AdultCaregiver: ${ Caregiver[0] }
-      ParentalChildSaftetyPlacementCaregiver: ${ Caregiver[1] }
-      ThisChildIsNotTheSubjectOfACurrentPreExistingValidAuthorizationAgreementAndNo: ${ ThisChildIsNotTheSubjectOfACurrentPreExistingValidAuthorizationAgreementAndNo }
+      ParentalChildSaftety: ${ Caregiver[1] }
+      ThisChildIsNotTheSubjectOfACurrent: ${ ThisChildIsNotTheSubjectOfACurrent }
       ThereIsNoCourtInvolvement: ${ CourtInvolvement[0] }
-      ThereIsHasBeenCourtInvolvement: ${ CourtInvolvement[1] }
+      ThisChildHasBeenTheSubjectOfACourtAction: ${ CourtInvolvement[1] }
       EnterIntoTheAgreementIndicateTheDateTheAgreementIsToExpire: ${ EnterIntoTheAgreementIndicateTheDateTheAgreementIsToExpire }
       IfApplicableStateCircumstancesToTerminateTheAgreementBeforeTheExpirationDate: ${ IfApplicableStateCircumstancesToTerminateTheAgreementBeforeTheExpirationDate }
       DisclosuresIncludedInThisAuthorizationAgreement: ${ DisclosuresIncludedInThisAuthorizationAgreement }
