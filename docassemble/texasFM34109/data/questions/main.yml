@@ -92,21 +92,6 @@ fields:
       datatype: area
       required: False
 ---
-question: |
-  Please sign here as the parent, or skip for printing.
-signature: DisclosuresIncludedInThisAuthorizationAgreement
-required: False
----
-question: |
-  Please sign here as the other parent (if they are with you), or skip for printing.
-signature: ParentSignature_2
-required: False
----
-question: |
-  Please sign here as the voluntary adult caregiver, or skip for printing.
-signature: VolunutaryCaregiver_Signature
-required: False
----
 question: Thank you for completing the Texas Voluntary Adult Caregiver form FM-34-109
 subquestion: |
   You'll need to print this out, and have a State of Texas Notary Public sigin and validate this.
@@ -142,9 +127,7 @@ attachments:
       IfApplicableStateCircumstancesToTerminateTheAgreementBeforeTheExpirationDate: ${ IfApplicableStateCircumstancesToTerminateTheAgreementBeforeTheExpirationDate }
       DisclosuresIncludedInThisAuthorizationAgreement: ${ DisclosuresIncludedInThisAuthorizationAgreement }
       PrintedName1: ${ FullName1 }
-      ParentSignature_2: ${ ParentSignature_2 }
       PrintedName2: ${ FullName2 }
-      VolunutaryCaregiver_Signature: ${ VolunutaryCaregiver_Signature }
       PrintedName3: ${ FullName3 }
 
 
